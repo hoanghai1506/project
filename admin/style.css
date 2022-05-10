@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top {
+    background-color: #0cc6f0;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(88, 14, 226);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.left {
+    float: left;
+    width: 20%;
+    height: 700px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #E5E5E5;
+}
+
+.navigation {
+    height: 700px;
+    background-color: #0cc6f0;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+.nav {
+    overflow: hidden;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    padding: 10px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.nav ul li a :hover {
+    background-color: #04c2ec;
+    color: #fff;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.nav li ul {
+    display: none;
+}
+
+.nav li ul li a {
+    display: block;
+}
+
+.nav>li>ul {
+    display: block;
+}
+
+
+/* --------------------------center-------------- */
+
+.center {
+    float: left;
+    width: 10%;
+    height: 700px;
+    background-color: #fff;
+    border-left: 1px solid #E5E5E5;
+}
+
+
+/* --------------------------right--------------- */
+
+.right {
+    float: left;
+    width: 70%;
+    height: 700px;
+    background-color: #fff;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 40px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(88, 14, 226);
+    text-align: center;
+}
+
+
+/* -----------------------quan ly nhan vien-------------- */
+
+table,
+th,
+td {
+    border: solid 1px #000;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    caption-side: bottom;
+}
+
+caption {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+table {
+    background-color: #0cc6f0
+}
+
+
+/* -------------------button----------------------------- */
+
+.button-three {
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    margin: 20px 0 0 100px;
+}
+
+.button-three {
+    position: relative;
+    background-color: #f39c12;
+    border: none;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.xoa {
+    float: left;
+}
+
+.sua {
+    float: right;
+}
+
+.button-three:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #97B1BF;
+    color: #000;
+}
+
+.button-three:after {
+    content: "";
+    background: #16f10f;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button-three:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}

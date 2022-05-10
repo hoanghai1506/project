@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*  SECTIONS  */
+        
+        .section {
+            clear: both;
+            padding: 0px;
+            margin: 0px;
+        }
+        /*  COLUMN SETUP  */
+        
+        .col {
+            display: block;
+            float: left;
+            margin: 1% 0 1% 1.6%;
+        }
+        
+        .col:first-child {
+            margin-left: 0;
+        }
+        /*  GROUPING  */
+        
+        .group:before,
+        .group:after {
+            content: "";
+            display: table;
+        }
+        
+        .group:after {
+            clear: both;
+        }
+        
+        .group {
+            zoom: 1;
+            /* For IE 6/7 */
+        }
+        /*  GRID OF FOUR  */
+        
+        .span_4_of_4 {
+            width: 100%;
+        }
+        
+        .span_3_of_4 {
+            width: 74.6%;
+        }
+        
+        .span_2_of_4 {
+            width: 49.2%;
+        }
+        
+        .span_1_of_4 {
+            width: 23.8%;
+        }
+        /*  GO FULL WIDTH BELOW 480 PIXELS */
+        
+        @media only screen and (max-width: 480px) {
+            .col {
+                margin: 1% 0 1% 0%;
+            }
+            .span_1_of_4,
+            .span_2_of_4,
+            .span_3_of_4,
+            .span_4_of_4 {
+                width: 100%;
+            }
+        }
+        /* ---------------------------------------------------- */
+        
+        .conterner {
+            width: 100%;
+            height: 300px;
+            background-color: #1e1c56;
+        }
+        
+        .logo_doi_tac ul li img {
+            margin-top: 20px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo_doi_tac ul li {
+            display: inline-block;
+            list-style: none;
+        }
+        
+        p {
+            color: rgb(255, 255, 255);
+        }
+        
+        h4 {
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+        }
+        
+        input {
+            border: none;
+            border-bottom: 1px solid #ccc;
+            width: 60%;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .Dang_ky {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            border: none;
+            background-color: orange;
+            color: white;
+            width: 20%;
+            height: 40px;
+        }
+        
+        .section {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .thongtin>li {
+            list-style: none;
+            padding-top: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        ul li {
+            list-style: none;
+            color: rgb(255, 255, 255);
+        }
+        
+        .Hotro>li {
+            padding-top: 20px;
+        }
+        
+        .copyright {
+            /* margin-left: auto;
+            margin-right: auto; */
+            text-align: center;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- footer -->
+    <div class="conterner">
+        <div class="section group">
+            <div class="col span_1_of_4">
+                <p>“Đặt sự hài lòng của khách hàng là ưu tiên số 1 trong mọi suy nghĩ hành động của mình” là sứ mệnh, là triết lý, chiến lược.. luôn cùng YODY tiến bước”</p>
+                <p class="Dang_ky">Đăng Ký nhận thông tin</p>
+                <input type="email" placeholder="Nhập email"> <button>Đăng ký</button>
+                <div class="logo_doi_tac">
+                    <ul>
+                        <li><img src="./access/image/image doi tac/facebook.png" alt=""></li>
+                        <li><img src="./access/image/image doi tac/youtube.png" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_3.webp" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_4.webp" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_5.webp" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_6.webp" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_7.webp" alt=""></li>
+                        <li><img src="./access/image/image doi tac/social_8.webp" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col span_1_of_4">
+                <h4>Về Yody</h4>
+                <ul class="thongtin">
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Hệ thống của hàng</a></li>
+                </ul>
+            </div>
+            <div class="col span_1_of_4">
+                <h4>Hỗ trợ khách hàng</h4>
+                <ul class="Hotro">
+                    <li><a href="#">Hướng dẫn chọn size</a></li>
+                    <li><a href="#">Chính sách Khách hàng thân thiết</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Thanh toán, giao nhận</a></li>
+                </ul>
+            </div>
+            <div class="col span_1_of_4">
+                <h4>Địa chỉ</h4>
+                <ul>
+                    <li> Head office - 5th floor, A17 building, 17 Ta Quang Buu, Hai Ba Trung, HN</li>
+                    <li><img src="./access/image/logo.svg" alt="logo"></li>
+                </ul>
+
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            <p>Bản quyền thuộc về @ TTA & LHH All right reserved</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
