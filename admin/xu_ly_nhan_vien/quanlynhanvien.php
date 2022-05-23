@@ -23,7 +23,7 @@
         <div class="navigation">
             <div class="nav">
                 <ul>
-                    <li><a href="index.php">Trang chủ </a></li>
+                    <li><a href="../trang_quan_ly.html">Trang chủ </a></li>
                     <li><a href="quanlynhanvien.php">Quản lý nhân viên </a></li>
                     <li><a href="#">Quản lý khách hàng</a></li>
                     <li><a href="#">Quản lý sản phẩm</a></li>
@@ -83,7 +83,9 @@
                     <td><?php echo $each["So_Dien_Thoai"]; ?></td>
                     <td><?php echo $each["Ten_Dang_Nhap"]; ?></td>
                     <td><?php echo $each["Mat_Khau"]; ?></td>
-                    <td><?php echo $each["Ten_Cap_Do"]; ?></td>
+                    <td>
+                        <?php echo $each["Ten_Cap_Do"]; ?>
+                    </td>
                     <td>
                         <div class="buttom" >
                             <button class="button-three" ><span><a href="xoa.php?Ma_Nhan_Vien=<?php echo $each['Ma_Nhan_Vien']?>">Xóa nhân viên</a></span>

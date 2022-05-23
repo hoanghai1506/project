@@ -48,7 +48,7 @@
             <form method="post" action="xu_ly_su_sp.php">
                 <table>
                     <tr>
-                        <td><input type="hidden" name="Ma_San_Pham" value="<?php echo['Ma_San_Pham'] ?>"></td>
+                        <td><input type="hidden" name="Ma_San_Pham" value="<?php echo $Ma_San_Pham ?>"></td>
                     </tr>
                     <tr>
                         <td>Loại Sản Phẩm</td>

@@ -7,4 +7,5 @@ $Mo_ta = $_POST['Mo_ta'];
 require_once('connect.php');
 $sql = "INSERT INTO san_pham(Ma_Loai, Ten_San_Pham, So_Luong_Trong_Kho, Gia, Mo_Ta) VALUES ('$Ma_Loai', '$Ten_San_Pham', '$So_Luong_Trong_Kho', '$Gia', '$Mo_ta')";
 mysqli_query($ketnoi, $sql);
+header('location:quanlysanpham.php');
 ?>

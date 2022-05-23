@@ -52,14 +52,14 @@
                 
                 <td><?php echo $each['Ma_Loai'] ?></td>
                 <td><?php echo $each['Ten_Loai'] ?></td>
-                <td><a>Xóa</a></td>
+                <td><a href="xoa_loai_sp.php?Ma_Loai=<?php echo $each['Ma_Loai'] ?>">Xóa</a></td>
                 <td><a href="#">Sửa</a></td>
             </tr>
         <?php }?>
             
         
         </table>
-            <a href="../loai_san_pham/themloaisanpham.php">thêm</a>
+            <a href="themloaisanpham.php">thêm</a>
     </div>
 </body>
 

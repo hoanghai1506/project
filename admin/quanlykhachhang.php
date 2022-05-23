@@ -49,8 +49,9 @@
                     <td>Mật khẩu</td>
                 </tr>
                 <?php 
-        require_once 'conect.php';
+        // require_once 'conect.php';
         
+        $ketnoi = mysqli_connect("localhost","root","","project_web");
         mysqli_set_charset($ketnoi,'utf8');
         
         $sql= "SELECT * FROM khach_hang";
@@ -68,14 +69,11 @@
                     <td><?php echo $each["So_Dien_Thoai"]; ?></td>
                     <td><?php echo $each["Ten_Dang_Nhap"]; ?></td>
                     <td><?php echo $each["Mat_Khau"]; ?></td>
+                    <td><a href="./xu_ly_khach_hang/xoakhachhang.php?Ma_Khach_Hang=<?php echo $each['Ma_Khach_Hang']?>">Xóa</a></td>
+                    <td><a href="#">Sửa</a></td>
                 </tr>
                 <?php } ?>
             </table>
-        </div>
-        <div class="buttom">
-            <button class="button-three"><a href="form_insert.php">Thêm Khách Hàng</a></button>
-            <button class="button-three"><span>Xóa Khách Hàng</span>
-            <button class="button-three">Sửa thông tin</button>
         </div>
     </div>
 </body>

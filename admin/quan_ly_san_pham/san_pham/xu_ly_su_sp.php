@@ -6,6 +6,7 @@
     $So_Luong_Trong_Kho = $_POST['So_Luong_Trong_Kho'];
     $Gia = $_POST['Gia'];
     $Mo_ta = $_POST['Mo_ta'];
+    echo $Ma_Loai;
     $sql = "update san_pham set Ma_Loai='$Ma_Loai',Ten_San_Pham='$Ten_San_Pham',So_Luong_Trong_Kho='$So_Luong_Trong_Kho',Gia='$Gia',Mo_ta='$Mo_ta' where Ma_San_Pham='$Ma_San_Pham'";
     mysqli_query($ketnoi,$sql);
     // mysqli_close($ketnoi);

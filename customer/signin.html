@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #60a3bc !important;
+            font-family: 'Roboto Flex', sans-serif !important;
+        }
+        
+        .dang_ky {
+            width: 1000px;
+            height: 600px;
+            background: #60a3bc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        form {
+            height: 550px;
+            width: 450px;
+            background-color: orange;
+        }
+        
+        p {
+            color: white;
+            margin-top: 10px;
+        }
+        
+        input {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #c0392b;
+            margin-top: 10px;
+            padding-left: 10px;
+        }
+        
+        button {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #c0392b;
+            margin-top: 10px;
+            background-color: #c0392b;
+            color: white;
+        }
+    </style>
+    <script>
+        function validate() {
+            var dem = 0;
+            // Name
+            var Ten = document.getElementById(Ten_Khach_Hang).value;
+            if (Ten.length == 0) {
+                document.getElementById(error_hoten).innerHTML = "Vui lòng nhập tên";
+                dem++;
+                console.log(1);
+            } else {
+                document.getElementById(error_hoten).innerHTML = "";
+                console.log(2)
+            }
+            //Dia chi
+            var dia_chi = document.getElementByname(Dia_Chi).value;
+            if (dia_chi.length == 0) {
+                document.getElementById(error_diachi).innerHTML = "Vui lòng nhập địa chỉ";
+                dem++;
+            }
+            // ngay Sinh
+            var ngay_sinh = document.getElementByname(Ngay_Sinh).value;
+            if (ngay_sinh.length == 0) {
+                document.getElementById(error_ngaysinh).innerHTML = "Vui lòng nhập ngày sinh";
+                dem++;
+            }
+            // So_Dien_Thoai
+            var so_dien_thoai = document.getElementByname(So_Dien_Thoai).value;
+            if (so_dien_thoai.length == 0) {
+                document.getElementById(error_so_dien_thoai).innerHTML = "Vui lòng nhập số điện thoại";
+                dem++;
+            }
+            // Email
+            var email = document.getElementByname(Email).value;
+            if (email.length == 0) {
+                document.getElementById(error_email).innerHTML = "Vui lòng nhập email";
+                dem++;
+            }
+            if (dem != 0) {
+                return false;
+
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="dang_ky">
+        <h2>Đăng ký</h2>
+        <form method="post" action="themthongtinkhachhang.php">
+            <p>Tên của bạn:</p><input type="text" placeholder="Nhập tên" name="Ten_Khach_Hang" id="Ten_Khach_Hang"> <span id="error_hoten"></span> <br>
+            <p>Địa chỉ</p><input type="text" placeholder="Nhập địa chỉ" name="Dia_Chi"><span id="error_diachi"></span><br>
+            <p>Ngày Sinh của bạn</p><input type="date" placeholder="Ngày sinh" name="Ngay_Sinh"><span id="error_ngaysinh"></span><br>
+            <p>Số điện thoại</p><input type="text" placeholder="Số điện thoại" name="So_Dien_Thoai"><span id="error_so_dien_thoai"></span><br>
+            <p>Email</p><input type="text" placeholder="Email" name="Ten_Dang_Nhap"><span id="error_email"></span><br>
+            <p>Nhập Mật khẩu</p><input type="password" placeholder="Mật khẩu" name="Mat_Khau"><span id="error_mat_khau"></span><br>
+            <p>Nhập Lại Mật Khẩu</p><input type="password" placeholder="Nhập lại Mật Khẩu" name="Mat_Khau_2">
+            <!-- <script>
+                window.alert("Mật khẩu không trùng khớp");
+            </script> -->
+            <button onclick="return validate()">Đăng ký</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -15,7 +15,7 @@
 </head>
 <body>
    <?php 
-   require_once 'header.php';
+   require_once 'header_sau_khi_dang_nhap.php';
    require_once 'slider.html';
    require_once 'product.html';
    require_once 'footer.html';

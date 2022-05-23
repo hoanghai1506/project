@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Trang Quan ly</title>
+    <title>Trang Quan ly san pham</title>
 </head>
 
 <body>
@@ -18,13 +18,13 @@
             <div class="nav">
                 <ul>
                     <li><a href="index.php">Trang chủ </a></li>
-                    <li><a href="./xu_ly_nhan_vien/quanlynhanvien.php">Quản lý nhân viên </a></li>
+                    <li><a href="./admin/xu_ly_nhan_vien/quanlynhanvien.php">Quản lý nhân viên </a></li>
                     <li><a href="quanlykhachhang.php">Quản lý khách hàng</a></li>
-                    <li><a href="./quan_ly_san_pham/san_pham/quanlysanpham.php">Quản lý sản phẩm</a>
+                    <li><a href="#">Quản lý sản phẩm</a>
                         <ul>
-                            <li><a href="./quan_ly_san_pham/san_pham/quanlysanpham.php">Quản lý sản phẩm</a></li>
-                            <li><a href="./quan_ly_san_pham/san_pham/quanlyloaisanpham.php">Quản lý kho</a></li>
-                            <li><a href="./quan_ly_san_pham/san_pham/anhsp.php">Quản lý ảnh sản phẩm</a></li>
+                            <li><a href="#">Quản lý sản phẩm</a></li>
+                            <li><a href="#">Quản lý kho</a></li>
+                            <li><a href="#">Quản lý ảnh sản phẩm</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Quản lý đơn hàng</a></li>
@@ -33,7 +33,17 @@
         </div>
     </div>
     <div class="right">
-        <h2>Thống kê doanh số</h2>
+        <table>
+            <form method="post" action="xulythemloaisanpham.php">
+            <tr>
+                <td>Tên loại sản phẩm</td>
+                <td><input type="text" name="Ten_Loai"></td>
+            </tr>
+            <button>Thêm</button>
+            </form>
+        </table>
+        
+
     </div>
 </body>
 

@@ -1,3 +1,6 @@
+<?php
+    Session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +30,7 @@
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+        height: 52px;
     }
 
     .nav ul li {
@@ -107,8 +111,9 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(52, 152, 219,1.0);
         width: 200px;
+        height: auto;
         display: none;
     }
     .nav .sub_menu li a{
@@ -117,11 +122,22 @@
     .icon_login{
         left: 20px;
     }
+    .nav li img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
 
+    }
     </style>
 </head>
 
 <body>
+    
+    <?php 
+        require_once 'connect.php';
+        $Ten_Dang_Nhap=$_SESSION['Ten_Dang_Nhap'];
+        $sql = "SELECT * FROM khach_hang WHERE Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
+    ?>
     <div class="nav">
         <ul>
             <li><a href="">nữ</a></li>
@@ -140,11 +156,25 @@
             </li>
             <li class="icon_login">
                 <a href="login.php">
-                    <i class="fa-solid fa-user" style="size:45px;"></i>
+                <?php 
+            require_once 'connect.php'; 
+            $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
+            $sql_lay_anh = "SELECT  
+            ak.Anh
+            FROM khach_hang as kh
+            join anh_Khach_hang as ak
+            on kh.Ma_Khach_Hang = ak.Id_khach_hang
+            where kh.Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
+            $result_lay_anh = mysqli_query($ketnoi, $sql_lay_anh);
+            ?>
+            <?php foreach ($result_lay_anh as $each){ ?>
+            <img src="./anh/<?php echo $each['Anh'] ?>" alt="ang"> <?php }?>
                 </a>
                 <ul class="sub_menu">
-                    <li><a href="login.php">đăng nhập</a></li>
-                    <li><a href="signin.html">đăng ký</a></li>
+                    <li><a href="trang_ca_nhan.php">Thông tin cá nhân</a></li>
+                    <li><a href="#">Giỏ hàng</a></li>
+                    <li><a href="#">Lịch sử mua hàng</a></li>
+                    <li><a href="logout.php">đăng xuất</a></li>
                 </ul>
             </li>
         </ul>

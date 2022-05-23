@@ -35,6 +35,7 @@
             } else {
                 return false;
             }
+        }
     </Script>
 </head>
 
@@ -58,6 +59,12 @@
     <div class="center">
 
     </div>
+    <?php 
+        $connect = mysqli_connect("localhost","root","","project_web");
+        mysqli_set_charset($connect,"utf8");
+        $sql = "SELECT * FROM ghi_chu_cap_do";
+        $cap_do = mysqli_query($connect,$sql);
+?>
     <div class="right">
         <h2>Thông tin nhân viên </h2>
         <form method="post" action="xulythem.php">
@@ -88,12 +95,18 @@
                 </tr>
                 <tr>
                     <td>Cấp độ</td>
-                    <td><input type="text" name="Cap_Do" id="Cap_Do" ></td>
+                    <td>
+                        <select name="Cap_do" id="">
+                            <?php foreach ($cap_do as $capdo){?>
+                                <option value="<?php echo$capdo['Cap_do'] ?>">
+                                    <?php echo $capdo['Ten_cap_do'] ?>
+                                </option>
+                                <?php }?>
+                        </select>
+                    </td>
                 </tr>
-                <tr>
+                
                     <button class="button" type="submit" onclick="return validate()">Thêm</button>
-                </tr>
-                <tr>
 
         </form>
 
