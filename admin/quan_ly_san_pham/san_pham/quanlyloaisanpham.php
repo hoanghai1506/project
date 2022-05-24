@@ -16,20 +16,21 @@
     <div class="left">
         <div class="navigation">
             <div class="nav">
-                <ul>
-                    <li><a href="index.php">Trang chủ </a></li>
-                    <li><a href="./admin/xu_ly_nhan_vien/quanlynhanvien.php">Quản lý nhân viên </a></li>
+            <ul>
+                    <li><a href="trang_quan_ly.html">Trang chủ </a></li>
+                    <li><a href="./xu_ly_nhan_vien/quanlynhanvien.php">Quản lý nhân viên </a></li>
                     <li><a href="quanlykhachhang.php">Quản lý khách hàng</a></li>
-                    <li><a href="#">Quản lý sản phẩm</a>
+                    <li><a href="./quan_ly_san_pham/san_pham/quanlysanpham.php">Quản lý sản phẩm</a>
                         <ul>
-                            <li><a href="#">Quản lý sản phẩm</a></li>
-                            <li><a href="#">Quản lý kho</a></li>
-                            <li><a href="#">Quản lý ảnh sản phẩm</a></li>
+                            <li><a href="./quan_ly_san_pham/san_pham/quanlysanpham.php">Quản lý sản phẩm</a></li>
+                            <li><a href="./quan_ly_san_pham/san_pham/quanlyloaisanpham.php">Quản lý kho</a></li>
+                            <li><a href="./quan_ly_san_pham/san_pham/anhsp.php">Quản lý ảnh sản phẩm</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Quản lý đơn hàng</a></li>
+                    <li><a href="#">Quản lý thống kê</a></li>
+                    <li class="logout"><a href="logout.php">Đăng xuất</a></li>
                 </ul>
-            </div>
         </div>
     </div>
     <div class="right">

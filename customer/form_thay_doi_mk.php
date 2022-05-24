@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a8994a5d4a.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Thay đổi mật khẩu </title>
     <style>
     * {
         margin: 0;
@@ -106,9 +107,9 @@
             <div class="menu">
                 <br>
                 <ul>
-                    <li><i class="fa-duotone fa-lock"></i><a href="">Thay Đổi mật khẩu</a></li>
-                    <li><a href="">Đơn hàng đã mua</a></li>
-                    <li><a href="logout.php">Đăng xuất</a></li>
+                    <li><i class="fa fa-lock" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="">Thay Đổi mật khẩu</a></li>
+                    <li><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="">Đơn hàng đã mua</a></li>
+                    <li><i class="fa fa-sign-out" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>
         </div>

@@ -37,6 +37,7 @@
         <table>
             <tr>
                 <td>Mã Sản phẩm</td>
+                <td>Tên sản phẩm</td>
                 <td>Ảnh</td>
             </tr>
             <?php
@@ -44,15 +45,22 @@
         mysqli_set_charset($ketnoi,'utf8');
 
 
-        $sql = "SELECT * FROM anh_san_pham";
+        $sql = "SELECT 
+        sp.Ma_San_Pham,
+        sp.Ten_San_Pham,
+        asp.Anh 
+        FROM anh_san_pham as asp
+        INNER JOIN san_pham as sp
+        ON asp.Ma_San_Pham = sp.Ma_San_Pham";
         $anh= mysqli_query($ketnoi,$sql);
         ?>
         <?php foreach($anh as $each){ ?>
             <tr>
                 
                 <td><?php echo $each['Ma_San_Pham'] ?></td>
+                <td><?php echo $each['Ten_San_Pham'] ?></td>
                 <td><img width="100px" src="./anh/<?php echo $each['Anh'] ?>" alt="anh"></td>
-                <td><a href="#">Xóa</a></td>
+                <td><a href="xoaanhsp.php?Ma_San_Pham=<?php echo $each['Ma_San_Pham']?>">Xóa</a></td>
                 <td><a href="#">Sửa</a></td>
             </tr>
         <?php }?>

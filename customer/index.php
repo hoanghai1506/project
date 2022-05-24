@@ -15,10 +15,10 @@
 </head>
 <body>
    <?php 
-   require_once 'header.php';
-   require_once 'slider.html';
-   require_once 'product.html';
-   require_once 'footer.html';
+   include 'header.php';
+   include 'slider.html';
+   include 'product.html';
+   include 'footer.html';
    ?> 
 
 </body>

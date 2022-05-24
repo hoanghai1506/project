@@ -42,7 +42,7 @@
         $sql_locsanpham = "SELECT * FROM loai";
         $loaisanpham= mysqli_query($ketnoi,$sql_locsanpham);
         ?>
-        <form action="locsanpham.php" method="post" >
+        <!-- <form action="locsanpham.php" method="post" >
         <select name="Ma_Loai" id="">
             <?php foreach($loaisanpham as $locsanpham){?>
             <option value="<?php echo $locsanpham['Ma_Loai']?>">
@@ -53,7 +53,7 @@
             
             <?php }?>
         </select>
-        <button>Lọc</button>
+        <button>Lọc</button> -->
         </form>
         
         <table>
@@ -67,6 +67,7 @@
                 <td>Ảnh</td>
             </tr>
             <?php
+            $ma_loai = $_POST['Ma_Loai'];
         $sql = "SELECT 
         sp.Ma_San_Pham,
         sp.Ma_Loai,
@@ -77,7 +78,8 @@
         asp.Anh 
         FROM san_pham as sp
         left join anh_san_pham as asp 
-        on sp.Ma_San_Pham = asp.Ma_San_Pham";
+        on sp.Ma_San_Pham = asp.Ma_San_Pham
+        where sp.Ma_Loai = '$ma_loai'";
         $sanphm= mysqli_query($ketnoi,$sql);
         ?>
         <?php foreach($sanphm as $each){ ?>

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a8994a5d4a.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Trang cá nhân</title>
     <style>
     * {
         margin: 0;
@@ -16,7 +17,7 @@
 
     .left {
         width: 400px;
-        height: 700px;
+        height: 600px;
         float: left;
         background-color: rgba(236, 240, 241, 1.0);
         margin-left:50px
@@ -24,6 +25,7 @@
 
     .right {
         width: 50%;
+        height: 600px;
         float: right;
         background-color: rgba(236, 240, 241, 1.0);
     }
@@ -50,7 +52,9 @@
         list-style: none;
         display: block;
     }
-
+    .menu>li>a{
+        color:orange!important;
+    }
 
     .img_user {
         width: 200px;
@@ -63,6 +67,15 @@
     a{
         text-decoration: none;
         color:rgba(243, 156, 18,1.0);
+    }
+    h5{
+        font-size: 20px;
+    }
+    .footer{
+    bottom: 0;
+    /* position: fixed; */
+    /* z-index: 0; */
+    margin-top: 700px;
     }
     </style>
 </head>
@@ -89,14 +102,14 @@
             <?php foreach ($result_lay_anh as $each){ ?>
             <img src="./anh/<?php echo $each['Anh'] ?>" alt=""> <?php }?>
             <br>
-            <a href="form_anh_dai_dien.php">Thêm ảnh đại diện</a>
+            <a href="form_anh_dai_dien.php">Thay ảnh đại diện</a>
             <br>
             <div class="menu">
                 <br>
                 <ul>
-                    <li><i class="fa-duotone fa-lock"></i><a href="form_thay_doi_mk.php">Thay Đổi mật khẩu</a></li>
-                    <li><a href="#">Đơn hàng đã mua</a></li>
-                    <li><a href="logout.php">Đăng xuất</a></li>
+                    <li><i class="fa fa-lock" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="form_thay_doi_mk.php">Thay Đổi mật khẩu</a></li>
+                    <li><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="#" color="orange">Đơn hàng đã mua</a></li>
+                    <li><i class="fa fa-sign-out" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>
         </div>
@@ -112,11 +125,13 @@
         $result = mysqli_query($ketnoi, $sql);
         ?>
         <?php foreach ($result as $each){?>
-        Họ và tên: <h4><?php echo $each['Ten_Khach_Hang']?></h4>
-        Email: <h4><?php echo $each['Ten_Dang_Nhap'] ?></h4>
+        Họ và tên: <h5><?php echo $each['Ten_Khach_Hang']?></h5>
+        Email: <h5><?php echo $each['Ten_Dang_Nhap'] ?></h5>
         <?php } ?>
     </div>
-
+    <div class="footer">
+    <?php include_once 'footer.html'; ?>
+    </div>
 </body>
 
 </html>

@@ -94,11 +94,13 @@
         }
     </style>
 </head>
-
-
 <body>
     <?php 
         session_start();
+        if(isset($_SESSION['err'])){
+            echo "<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>";
+            unset($_SESSION['err']);
+        }
         if(isset($_SESSION['Ten_Dang_Nhap'])){
             header("location:index.php");
         }

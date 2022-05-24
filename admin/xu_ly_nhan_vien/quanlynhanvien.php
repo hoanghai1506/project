@@ -12,6 +12,21 @@
         text-decoration: none;
         color: #000;
     }
+    .buttom{
+        width: 100px;
+        height: 70px;
+        background-color: rgba(52, 152, 219,1.0);
+        text-align: center;
+        
+    }
+    .buttom a{
+        /* padding-top :35px;
+        padding-bottom: 35px;
+        padding-left:50px;
+        padding-right:50px; */
+        /* text-align: center; */
+        line-height: 70px;
+    }
     </style>
 </head>
 
@@ -32,11 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="center" >
-        <div class="buttom">
-            <button class="button-three"><a href="form_insert.php">Thêm nhân viên</a></button>
-        </div>
-    </div>
+
     <div class="right">
         <h2>Thông tin nhân viên </h2>
         <div class="table">
@@ -87,17 +98,17 @@
                         <?php echo $each["Ten_Cap_Do"]; ?>
                     </td>
                     <td>
-                        <div class="buttom" >
-                            <button class="button-three" ><span><a href="xoa.php?Ma_Nhan_Vien=<?php echo $each['Ma_Nhan_Vien']?>">Xóa nhân viên</a></span>
-                            <button class="button-three" ><a href="form_sua.php?Ma_Nhan_Vien=<?php echo $each['Ma_Nhan_Vien']?>">Sửa thông tin </a></button>
-                        </div>
+                           <a href="xoa.php?Ma_Nhan_Vien=<?php echo $each['Ma_Nhan_Vien']?>">Xóa nhân viên</a>
                     </td>
+                    <td><a href="form_sua.php?Ma_Nhan_Vien=<?php echo $each['Ma_Nhan_Vien']?>">Sửa thông tin </a></td>
                 </tr>
                 <?php } 
                 ?>
             </table>
         </div>
-
+        <div class="buttom">
+            <a href="form_insert.php">Thêm nhân viên</a>
+        </div>
     </div>
 </body>
 

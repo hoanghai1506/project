@@ -80,7 +80,7 @@
         
         .conterner {
             width: 100%;
-            height: 300px;
+            height: 400px;
             background-color: #1e1c56;
         }
         
@@ -95,11 +95,11 @@
             list-style: none;
         }
         
-        p {
+        .conterner .section .col p {
             color: rgb(255, 255, 255);
         }
         
-        h4 {
+        .col>h4 {
             color: rgb(255, 255, 255);
             text-transform: uppercase;
         }
@@ -117,7 +117,7 @@
             margin-bottom: 10px;
         }
         
-        button {
+        .col>button {
             border: none;
             background-color: orange;
             color: white;
@@ -132,28 +132,32 @@
         
         .thongtin>li {
             list-style: none;
-            padding-top: 20px;
+            /* padding-top: 20px !important; */
         }
         
-        a {
+        .conterner .section .col a {
             text-decoration: none;
             color: white;
         }
         
-        ul li {
+        .thongtin li,
+        .Hotro li,
+        .logo_doi_tac li,
+        .diachi li {
             list-style: none;
             color: rgb(255, 255, 255);
-        }
-        
-        .Hotro>li {
-            padding-top: 20px;
+            padding-top: 0;
         }
         
         .copyright {
             /* margin-left: auto;
             margin-right: auto; */
-            text-align: center;
-            padding-top: 20px;
+            text-align: center!important;
+            padding-top: 20px!important;
+        }
+        
+        .copyright h4 {
+            color: white;
         }
     </style>
 </head>
@@ -201,16 +205,18 @@
             </div>
             <div class="col span_1_of_4">
                 <h4>Địa chỉ</h4>
-                <ul>
-                    <li> Head office - 5th floor, A17 building, 17 Ta Quang Buu, Hai Ba Trung, HN</li>
-                    <li><img src="./access/image/logo.svg" alt="logo"></li>
-                </ul>
+                <div class="diachi">
+                    <ul>
+                        <li> Head office - 5th floor, A17 building, 17 Ta Quang Buu, Hai Ba Trung, HN</li>
+                        <li><img src="./access/image/logo.svg" alt="logo"></li>
+                    </ul>
+                </div>
 
             </div>
         </div>
         <hr>
         <div class="copyright">
-            <p>Bản quyền thuộc về @ TTA & LHH All right reserved</p>
+            <h4>Bản quyền thuộc về @ TTA & LHH All right reserved</h4>
         </div>
     </div>
 
