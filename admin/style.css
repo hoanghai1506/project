@@ -60,6 +60,11 @@ h1 {
     color: #fff;
 }
 
+.navigation .nav ul li:hover {
+    background: #000000;
+    cursor: pointer;
+}
+
 .nav ul li a {
     text-decoration: none;
     margin-top: 10px;
@@ -101,6 +106,11 @@ h1 {
     font-size: 12px;
     font-weight: bold;
     color: #666;
+}
+
+.navigation .nav ul li:hover {
+    background: #3756f6;
+    cursor: pointer;
 }
 
 h2 {

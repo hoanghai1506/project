@@ -92,11 +92,25 @@
         .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
             background-color: #c0392b !important;
         }
+        
     </style>
+        <script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    </script>
 </head>
 <body>
     <?php 
-        session_start();
+        if(session_id() === '' ){
+            session_start();
+        }
+        
         if(isset($_SESSION['err'])){
             echo "<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>";
             unset($_SESSION['err']);
@@ -125,11 +139,12 @@
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" name="Mat_Khau" class="form-control input_pass"  placeholder="Mật khẩu">
+                            <input type="password" name="Mat_Khau" class="form-control input_pass"  placeholder="Mật khẩu" id="myInput">
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                <input type="checkbox" onclick="myFunction()">Show Password <br>
                                 <label class="custom-control-label" for="customControlInline">Nhớ mật khẩu</label>
                             </div>
                         </div>

@@ -5,32 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
     <link rel="stylesheet" href="style.css">
     <title>Trang Quan ly</title>
     <style>
-    .button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-    }
-    
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
     <Script>
         function validate() {
-            var dem =0;
+            var dem = 0;
             var ten = document.getElementById("Ten_Nhan_Vien").value;
             if (ten.length == 0) {
-                document.getElementById("error_ten").innerHTML ="Vui lòng nhập tên nhân viên";
+                document.getElementById("error_ten").innerHTML = "Vui lòng nhập tên nhân viên";
                 dem++;
             } else {
-                document.getElementById("error_ten").innerHTML ="";
+                document.getElementById("error_ten").innerHTML = "";
             };
-            if(dem == 1) {
+            if (dem == 1) {
                 return true;
             } else {
                 return false;
@@ -47,11 +49,11 @@
         <div class="navigation">
             <div class="nav">
                 <ul>
-                    <li><a href="index.php">Trang chủ </a></li>
+                    <li><a href="../trang_quan_ly.php">Trang chủ </a></li>
                     <li><a href="quanlynhanvien.php">Quản lý nhân viên </a></li>
-                    <li><a href="#">Quản lý khách hàng</a></li>
-                    <li><a href="#">Quản lý sản phẩm</a></li>
-                    <li><a href="#">Quản lý đơn hàng</a></li>
+                    <li><a href="../quanlykhachhang.php">Quản lý khách hàng</a></li>
+                    <li><a href="../quan_ly_san_pham/quanlysanpham.php">Quản lý sản phẩm</a></li>
+                    <li><a href="../xu_ly_don_hang/quanlydonhang.php">Quản lý đơn hàng</a></li>
                 </ul>
             </div>
         </div>
@@ -59,19 +61,19 @@
     <div class="center">
 
     </div>
-    <?php 
-        $connect = mysqli_connect("localhost","root","","project_web");
-        mysqli_set_charset($connect,"utf8");
-        $sql = "SELECT * FROM ghi_chu_cap_do";
-        $cap_do = mysqli_query($connect,$sql);
-?>
+    <?php
+    $connect = mysqli_connect("localhost", "root", "", "project_web");
+    mysqli_set_charset($connect, "utf8");
+    $sql = "SELECT * FROM nhan_vien";
+    $cap_do = mysqli_query($connect, $sql);
+    ?>
     <div class="right">
         <h2>Thông tin nhân viên </h2>
         <form method="post" action="xulythem.php">
             <table>
                 <tr>
                     <td>Tên nhân viên</td>
-                    <td><input type="text" name="Ten_Nhan_Vien" id="Ten_Nhan_Vien" ><span id="error_ten"></span></td>
+                    <td><input type="text" name="Ten_Nhan_Vien" id="Ten_Nhan_Vien"><span id="error_ten"></span></td>
                 </tr>
                 <tr>
                     <td>Địa chỉ</td>
@@ -79,7 +81,7 @@
                 </tr>
                 <tr>
                     <td>Số điện thoại</td>
-                    <td><input type="text" name="So_Dien_Thoai" id="So_Dien_Thoai" ></td>
+                    <td><input type="text" name="So_Dien_Thoai" id="So_Dien_Thoai"></td>
                 </tr>
                 <tr>
                     <td>Ngày sinh</td>
@@ -96,17 +98,23 @@
                 <tr>
                     <td>Cấp độ</td>
                     <td>
-                        <select name="Cap_do" id="">
-                            <?php foreach ($cap_do as $capdo){?>
-                                <option value="<?php echo$capdo['Cap_do'] ?>">
-                                    <?php echo $capdo['Ten_cap_do'] ?>
+                        <select name="Cap_Do" id="">
+                            <?php foreach ($cap_do as $capdo) { ?>
+                                <option value="<?php echo $capdo['Cap_Do'] ?>">
+                                    <?php
+                                    if ($capdo["Cap_Do"] == 1) {
+                                        echo "Quản lý";
+                                    } else {
+                                        echo "Nhân viên";
+                                    }
+                                    ?>
                                 </option>
-                                <?php }?>
+                            <?php } ?>
                         </select>
                     </td>
                 </tr>
-                
-                    <button class="button" type="submit" onclick="return validate()">Thêm</button>
+
+                <button class="button" type="submit" >Thêm</button>
 
         </form>
 

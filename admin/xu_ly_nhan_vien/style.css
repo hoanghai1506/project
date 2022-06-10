@@ -22,6 +22,11 @@ h1 {
     text-align: center;
 }
 
+.navigation .nav ul li:hover {
+    background: #3756f6;
+    cursor: pointer;
+}
+
 .left {
     float: left;
     width: 20%;

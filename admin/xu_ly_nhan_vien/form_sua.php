@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -17,11 +20,11 @@
         <div class="navigation">
             <div class="nav">
                 <ul>
-                    <li><a href="index.php">Trang chủ </a></li>
-                    <li><a href="quanlynhanvien.php">Quản lý nhân viên </a></li>
-                    <li><a href="#">Quản lý khách hàng</a></li>
-                    <li><a href="#">Quản lý sản phẩm</a></li>
-                    <li><a href="#">Quản lý đơn hàng</a></li>
+                    <li><a href="../quanlykhachhang.php">Trang chủ </a></li>
+                    <li><a href="../xu_ly_nhan_vien/quanlynhanvien.php">Quản lý nhân viên </a></li>
+                    <li><a href="../quanlykhachhang.php">Quản lý khách hàng</a></li>
+                    <li><a href="../quan_ly_san_pham/quanlysanpham.php">Quản lý sản phẩm</a></li>
+                    <li><a href="../xu_ly_don_hang/quanlydonhang.php">Quản lý đơn hàng</a></li>
                 </ul>
             </div>
         </div>

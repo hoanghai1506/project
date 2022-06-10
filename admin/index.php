@@ -97,12 +97,12 @@
 
 
 <body>
-<!-- <?php 
-    //     session_start();
-    //     if(isset($_SESSION['Ten_Dang_Nhap'])){
-    //         header("location:index.php");
-    //     }
-    // ?> -->
+<?php 
+        if(isset($_SESSION['err'])){
+            echo "<script>alert('Tài khoản hoặc mật khẩu không chính xác')</script>";
+            unset($_SESSION['err']);
+        }
+     ?>
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
             <div class="user_card">

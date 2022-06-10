@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,30 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 
 <body>
-    <?php 
-   require_once 'header_sau_khi_dang_nhap.php';
-   ?>
+    <?php
+    require_once 'header_sau_khi_dang_nhap.php';
+    ?>
     <br>
-    <?php 
-   require_once 'slider.html';
-   ?>
-   <br>
-    <?php 
-   require_once 'product.html';
-   ?>
-   <br>
-    <?php 
-   require_once 'footer.html';
-   ?>
+    <?php
+    require_once 'slider.html';
+    ?>
+    <br>
+    <?php
+    require_once 'product.php';
+    ?>
+    <br>
+    <?php require_once 'product2.php'  ?>
+    <?php require_once 'product3.php' ?>
+    <?php require_once 'footer.html';
+    ?>
 
 </body>
 

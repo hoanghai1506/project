@@ -5,8 +5,6 @@
     $Mat_Khau = $_POST['Mat_Khau'];
     //loai bo cac ki tu dac biet
     $Mat_Khau=preg_replace('/[\',\=]/', '', $Mat_Khau);
-    // echo $Mat_Khau;
-    // die;
     $sql = "SELECT * FROM khach_hang WHERE Ten_Dang_Nhap = '$Ten_Dang_Nhap' AND Mat_Khau = '$Mat_Khau'";
     $result = mysqli_query($ketnoi, $sql);
     $sql_check= "SELECT count(Ma_Khach_Hang) as so_account FROM khach_hang WHERE Ten_Dang_Nhap = '$Ten_Dang_Nhap' and Mat_Khau = '$Mat_Khau'";
@@ -17,7 +15,6 @@
     if ($so_account>0){
         $_SESSION['Ten_Dang_Nhap'] = $Ten_Dang_Nhap;
         header("location:trang_khach_hang_khi_dang_nhap.php");
-        echo "Đăng nhập thành công";
     } else {
         $_SESSION['err'] = 1;
         header("location:login.php");

@@ -90,12 +90,16 @@
         <div class="img_user">
             <?php 
             require_once 'connect.php'; 
-            $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
+            if(isset($_SESSION['Ten_Dang_Nhap'])){
+
+                $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
+            } else{
+                echo "bạn chưa đăng nhập";
+            }
+
             $sql_lay_anh = "SELECT  
-            ak.Anh
+            kh.Anh
             FROM khach_hang as kh
-            join anh_Khach_hang as ak
-            on kh.Ma_Khach_Hang = ak.Id_khach_hang
             where kh.Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
             $result_lay_anh = mysqli_query($ketnoi, $sql_lay_anh);
             ?>
@@ -108,7 +112,7 @@
                 <br>
                 <ul>
                     <li><i class="fa fa-lock" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="">Thay Đổi mật khẩu</a></li>
-                    <li><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="">Đơn hàng đã mua</a></li>
+                    <li><i class="fa fa-cart-arrow-down" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="lich_su_don_hang.php">Đơn hàng đã mua</a></li>
                     <li><i class="fa fa-sign-out" aria-hidden="true" style="color:orange; margin-right:5px;"></i><a href="logout.php">Đăng xuất</a></li>
                 </ul>
             </div>

@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,10 +95,8 @@
             require_once 'connect.php'; 
             $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
             $sql_lay_anh = "SELECT  
-            ak.Anh
+            kh.Anh
             FROM khach_hang as kh
-            join anh_Khach_hang as ak
-            on kh.Ma_Khach_Hang = ak.Id_khach_hang
             where kh.Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
             $result_lay_anh = mysqli_query($ketnoi, $sql_lay_anh);
             ?>

@@ -13,7 +13,7 @@ $result_id=mysqli_query($ketnoi,$sql_id);
 foreach($result_id as $each){
     $Ma_Khach_Hang=$each['Ma_Khach_Hang'];
 }
-    $sql = "UPDATE anh_khach_hang SET Anh = '$file_name' WHERE Id_khach_hang = '$Ma_Khach_Hang'";
+    $sql = "UPDATE khach_hang SET Anh = '$file_name' WHERE Ma_Khach_Hang = '$Ma_Khach_Hang'";
     mysqli_query($ketnoi,$sql);
     header("location:trang_ca_nhan.php");
 ?>

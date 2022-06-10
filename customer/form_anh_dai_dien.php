@@ -6,36 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .left {
-            width: 30%;
-            float: left;
-            margin-left:10%;
-        }
-        .right {
-            width: 60%;
-            float: right;
-        }
-        h1{
-            text-align: center;
-            color:orange
-        }
-        h2{
-            text-align: center;
-            color:orange
-        }
-        .menu > li{
-            list-style: none;
-            display: block;
-        }
-        .menu{
-            margin-left: 0;
-            margin-right: 0;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .left {
+        width: 400px;
+        height: 700px;
+        float: left;
+        background-color: rgba(236, 240, 241, 1.0);
+        margin-left: 50px
+    }
+
+    .right {
+        width: 50%;
+        float: right;
+        background-color: rgba(236, 240, 241, 1.0);
+    }
+
+    .left img {
+        width: 100px;
+        border-radius: 50px 50px 50px 50px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: orange;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        color: orange
+    }
+
+    .menu>li {
+        list-style: none;
+        display: block;
+    }
+
+
+    .img_user {
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgba(243, 156, 18, 1.0);
+    }
     </style>
 </head>
 <body>

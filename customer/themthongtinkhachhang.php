@@ -25,9 +25,6 @@
     foreach($result_ID as $each){
         $Ma_Khach_Hang=$each['Ma_Khach_Hang'];
     }
-    $sql_themanh="INSERT INTO anh_khach_hang(Id_khach_hang) VALUES ('$Ma_Khach_Hang')";
-    $result_themanh=mysqli_query($ketnoi, $sql_themanh);
-    mysqli_close($ketnoi);
-   
+
     header('location:login.php');
 ?>

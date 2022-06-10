@@ -1,5 +1,8 @@
 <?php
-    Session_start();
+    if(session_id() === '' ){
+        session_start();
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,78 +110,154 @@
     .nav li:hover .sub_menu {
         display: block;
     }
-    .nav .sub_menu{
+
+    .nav .sub_menu {
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: rgba(52, 152, 219,1.0);
+        background-color: rgba(52, 152, 219, 1.0);
         width: 200px;
         height: auto;
         display: none;
     }
-    .nav .sub_menu li a{
-        width:200px
+
+    .nav .sub_menu li a {
+        width: 200px
     }
-    .icon_login{
+
+    .icon_login {
         left: 20px;
     }
-    .nav li img{
+
+    .nav li img {
         width: 30px;
         height: 30px;
         border-radius: 50%;
 
     }
+
+    .nav li a i {
+        padding-left: 30px;
+    }
     </style>
 </head>
 
 <body>
+
+    <?php
+    require_once 'connect.php';
+    $Ten_Dang_Nhap = "";
+    if(isset($_SESSION['Ten_Dang_Nhap'])){
+        $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
+    }
     
-    <?php 
-        require_once 'connect.php';
-        $Ten_Dang_Nhap=$_SESSION['Ten_Dang_Nhap'];
-        $sql = "SELECT * FROM khach_hang WHERE Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
+    $sql = "SELECT * FROM khach_hang WHERE Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
     ?>
+    <?php
+        $search="";
+        if(isset($_GET['search'])){
+            $search = $_GET['search'];
+        }
+     ?>
     <div class="nav">
         <ul>
-            <li><a href="">nữ</a></li>
-            <li><a href="">nam</a></li>
-            <li><a href="">trẻ em</a></li>
-            <li><a href="">polo yody</a></li>
-            <li><a href="">bộ sưu tập</a></li>
+            <li><a href="view_all_product.php?Ma_Loai=1">nữ</a></li>
+            <li><a href="view_all_product.php?Ma_Loai=2">nam</a></li>
+            <li><a href="view_all_product.php?Ma_Loai=3">trẻ em</a></li>
             <li>
                 <div class="warp">
                     <div class="search">
-                        <input type="text" name="" class="searchTerm">
-                        <button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i> </button>
+                        <form action="">
+                            <input type="text" class="searchTerm" name="search" value="search">
+                            <button type="submit" class="searchButton" name="ok">
+                                <i class="fa fa-search"></i></button>
+                        </form>
                     </div>
                 </div>
             </li>
             <li class="icon_login">
+                <?php if(!isset($_SESSION['Ten_Dang_Nhap'])) { ?>
                 <a href="login.php">
-                <?php 
-            require_once 'connect.php'; 
-            $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
-            $sql_lay_anh = "SELECT  
-            ak.Anh
-            FROM khach_hang as kh
-            join anh_Khach_hang as ak
-            on kh.Ma_Khach_Hang = ak.Id_khach_hang
-            where kh.Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
-            $result_lay_anh = mysqli_query($ketnoi, $sql_lay_anh);
-            ?>
-            <?php foreach ($result_lay_anh as $each){ ?>
-            <img src="./anh/<?php echo $each['Anh'] ?>" alt="ang"> <?php }?>
+                    <i class="fa-solid fa-user" style="size:45px;"></i>
+                </a>
+                <ul class="sub_menu">
+                    <li><a href="login.php">đăng nhập</a></li>
+                    <li><a href="signin.html">đăng ký</a></li>
+                </ul>
+                <?php } else { ?>
+                <a href="login.php">
+                    <?php
+                    require_once 'connect.php';
+                    $Ten_Dang_Nhap = $_SESSION['Ten_Dang_Nhap'];
+                    $sql_lay_anh = "SELECT  
+                                    kh.Anh
+                                    FROM khach_hang as kh
+                                   
+                                    where kh.Ten_Dang_Nhap = '$Ten_Dang_Nhap'";
+                    $result_lay_anh = mysqli_query($ketnoi, $sql_lay_anh);
+                    ?>
+                    <?php foreach ($result_lay_anh as $each) { ?>
+                    <img src="./anh/<?php echo $each['Anh'] ?>" alt="ang"> <?php } ?>
                 </a>
                 <ul class="sub_menu">
                     <li><a href="trang_ca_nhan.php">Thông tin cá nhân</a></li>
-                    <li><a href="#">Giỏ hàng</a></li>
-                    <li><a href="#">Lịch sử mua hàng</a></li>
+                    <li><a href="hoa_don.php">Giỏ hàng</a></li>
+                    <li><a href="lich_su_don_hang.php">Lịch sử mua hàng</a></li>
                     <li><a href="logout.php">đăng xuất</a></li>
                 </ul>
+                <?php } ?>
             </li>
+            <li><a href="hoa_don.php"><i class="fa fa-shopping-cart" style="font-size:25px;color:orange"></i></a></li>
         </ul>
     </div>
+    <?php 
+        require_once 'connect.php';
+        if(isset($_REQUEST['ok'])){
+            $search=addslashes($_GET['search']);
+
+            if(empty($search)){
+                echo "vui lòng nhập từ khóa";
+            } else {
+                $query="select * 
+                        from san_pham as sp
+                        join anh_san_pham as asp
+                            using(Ma_San_Pham)
+                        where Ten_San_Pham like '%$search%'";
+                $result=mysqli_query($ketnoi,$query);
+                $num=mysqli_num_rows($result);
+                if($num>0 && $search != ""){
+                    echo"$num kết quả trả về với từ khóa <b>$search</b>";
+                    ?>
+
+                    
+                    
+                    <div class="section group">
+                   <?php while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                        <div class="col span_1_of_5">
+            <a href="view_detail.php?Ma_San_Pham=<?php echo $row['Ma_San_Pham']?>">
+                <img src="../admin/quan_ly_san_pham/anh/<?php echo $row['Anh'] ?>" alt="Anh san pham" width="100px">
+            </a>
+            <br>
+            <a href="view_detail.php?Ma_San_Pham=<?php echo $row['Ma_San_Pham']?>">
+                <?php echo $row['Ten_San_Pham'] ?>
+            </a>
+            <p>
+                <?php echo number_format($row['Gia']) ?>
+            </p>
+        </div>
+
+
+        <?php
+                    }
+                }
+                else{
+                    echo "không tìm thấy kết quả nào";
+                }
+            }
+        }
+
+    ?>
 </body>
 
 </html>
